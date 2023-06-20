@@ -1,751 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Best Indian Devotional songs, Radhe Lage, Raam siya ram, har har, Hanuman Chalisa Bass busted" >
-     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Best Indian Devotional songs, Radhe Lage, Raam siya ram, har har, Hanuman Chalisa Bass busted"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>MF</title>
-</head>
-    <style>
-        html{
-            margin: 0;
-            padding: 0;
-            top: 0;
-            bottom: 0;
-            scroll-behavior: smooth;
-        }
-
-        * {
-
-            box-sizing: border-box;
-            font-family: 'Ubuntu', sans-serif;
-        }
-
-        ::-webkit-scrollbar {
-            display: none;
-        }
-
-        #preloader{
-            background: black  url("song_banner/mfocus-preloader.gif");
-            height: 100vh;
-            width: 100%;
-            background-repeat: no-repeat;
-            background-size: 50%;
-            background-position: center;
-            position: fixed;
-            z-index: 1000;
-            display: none;
-        }
-
-
-        body {
-            min-height: 120vh;
-            width: 100%;
-            background: linear-gradient(90deg, rgba(249, 178, 170, 0.8), rgb(249, 208, 173,) );
-            /* background: linear-gradient(to right ,white,whitesmoke,rgb(255, 239, 235), rgb(252, 226, 225) ,rgb(255, 237, 235), whitesmoke, white); */
-        }
-
-
-        /* Create a sticky/fixed navbar */
-        #navbar {
-            /* overflow: hidden; */
-            background-color: hsl(0, 100%, 99%);
-            padding: 45px 10px;
-            transition: 0.6s;
-            position: fixed;
-            width: 100%;
-            z-index: 99;
-            border-bottom: 2px solid rgb(138, 49, 49);
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-
-        }
-
-
-        /* Style the navbar links */
-        #navbar a {
-            float: left;
-            color: black;
-            text-align: center;
-            padding: 6px;
-            margin: 2px;
-            text-decoration: none;
-            font-size: 18px;
-            line-height: 25px;
-            border-radius: 4px;
-        }
-
-        /* Style the logo */
-        #navbar #logo {
-            font-size: 3rem;
-            font-weight: bold;
-            transition: 0.6s;
-        }
-
-        /* Links on mouse-over */
-        #navbar a:hover {
-            background-color: rgb(83, 76, 76);
-            color: white;
-            transition: 0.6s;
-            border-bottom-right-radius: 15px;
-            border-top-left-radius: 15px;
-            border-top-color: black;
-            border-bottom-color: aliceblue;
-        }
-
-        /* Style the active/current link */
-        #navbar a.active {
-            background-color: rgb(252, 221, 248);
-            border: 1px;
-
-        }
-
-
-        /* Display some links to the right */
-        #navbar-right {
-            float: right;
-        }
-
-        h2 {
-            padding: 4px;
-            margin: 5px;
-        }
-
-        h3 {
-            text-align: center;
-            margin: 0px;
-
-        }
-
-        #atext {
-            transition: 0.6s;
-        }
-
-        p {
-            text-align: center;
-            font-size: 18px;
-        }
-
-
-        footer {
-            border: 6px solid brown;
-            text-align: center;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-            height: 50px;
-            background-color: rgb(252, 251, 250);
-            color: black;
-            font-size: 22px;
-            padding: 10px 0 10px;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-width: 0px;
-            border-left-width: 0.2px;
-            border-right-width: 0.2px;
-
-        }
-        html {
-            position: relative;
-            min-height: 100%;
-        }
-
-
-        .container {
-            margin: auto 8px auto auto;
-            padding: 0;
-            height: auto;
-            margin-left: 4px;
-            background-image: url('medit_back.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            
-        }
-        .intro1{
-            padding-left: 100px;
-            background: linear-gradient(rgb(249, 231, 229) , rgb(249, 239, 239), rgb(247, 208, 185), #ff7b44ed, rgb(249, 223, 208), rgb(240, 240, 243),rgb(250, 239, 233), rgb(249, 231, 229));
-            width: 100%;
-        }
-        .intro_para{
-            text-shadow: 1px 1px 1px #fff;
-        }
-        .songs_container{
-            min-height: 75vh;
-            background: url('medit_back.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 70%;
-            margin: 30px auto;
-            padding: 8px;
-        }
-        .bottom_song_meta{
-            position: sticky;
-            /* background-color: rgb(247  135 123 / 88%); */
-            background: linear-gradient(to right, rgb(245, 178, 168) , rgb(252, 143, 143), rgb(248, 99, 139), rgb(252, 101, 101), rgb(248, 99, 139), rgb(252, 143, 143), rgb(245, 178, 168));
-            opacity: 0.94;
-            width: 70%;
-            margin: 0 auto;
-            height: 100px;
-            bottom: 40px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background: linear-gradient(-45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);  
-            animation: AnimateBG 10s ease infinite;
-        }
-
-        @keyframes AnimateBG { 
-            0%{background-position:0% 50%;}
-            50%{background-position:100% 50%;}
-            100%{background-position:0% 50%;}
-            }
-        .songLoader{
-            width: 50rem;
-            cursor: pointer;
-        }
-        .icon{
-            width: 35px;
-            margin: 8px;
-            cursor: pointer;
-        }
-        .icons{
-            cursor: pointer;
-        }
-
-        /*Cards css starts here*/
-        .songs_container{
-            margin: 10px auto;
-        }
-        .row{
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .image{
-            background: rgb(248, 7, 248);
-            position: relative;
-            flex: 1;
-            max-width: 280px;
-            height: 300px;
-            margin: 15px 15px;
-
-        }
-
-        .image img{
-            opacity: 0.9;
-            position: relative;
-            vertical-align: top;
-            transition: all 0.6s ease;
-            width: 280px;
-            height: 300px;
-            margin: auto auto;
-        }
-
-        .image:hover img{
-            opacity: 1;
-        }
-        .image .details{
-            z-index: 1;
-            position: absolute;
-            top: 0;
-            right: 0;
-            color: #fff;
-            text-shadow: 1px 1px 1px rgb(1, 1, 1);
-            width: 100%;
-            height: 100%;
-        }
-        .image .details h2{
-            text-align: center;
-            font-weight: bold;
-            margin-top:45px ;
-            transition: 0.5s;
-        }
-        .image:hover .details h2{
-            transform: translateY(-20px);
-        }
-        .image .details p{
-            margin: 25px 25px 0px 40px;
-            text-align: center;
-            opacity: 0;
-            transition: 0.5s;
-        }
-        .image:hover .details p{
-            opacity: 1;
-            transform: translateY(-30px);
-        }
-        .image:hover .bn632-hover{
-            opacity: 1;
-        }
-
-        /* Cards css ends  */
-
-
-        /*Imported Button Css start*/
-        .bn632-hover {
-            font-size: 16px;
-            font-weight: 600;
-            color: #fff;
-            cursor: pointer;
-            margin: 80px;
-            height: 40px;
-            width: 120px;
-            text-align:center;
-            border: none;
-            background-size: 300% 100%;
-            border-radius: 50px;
-            -o-transition: all .4s ease-in-out;
-            -webkit-transition: all .4s ease-in-out;
-            transition: all .4s ease-in-out;
-            opacity: 0;
-            }
-
-            .bn632-hover:hover {
-            background-position: 100% 0;
-            -o-transition: all .4s ease-in-out;
-            -webkit-transition: all .4s ease-in-out;
-            transition: all .4s ease-in-out;
-            }
-
-            .bn632-hover:focus {
-            outline: none;
-            }
-
-            .bn632-hover.bn21 {
-            background-image: linear-gradient(
-                to right,
-                #fc6076,
-                #ff9a44,
-                #ef9d43,
-                #e75516
-            );
-            box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-            }
-            /*Imported Button css ended bhai*/
-            .songInfo{
-                position: absolute;
-                left: 130px;
-            }
-            .songInfo img{
-                height: 15px;
-                width: 35%;
-                display: none;
-                transition: 1s ease;
-            }
-
-
-            /* Play Pause Button start*/
-            .playpause:hover {
-                background: transparent;
-                display: inline-block;
-            }
-
-            .playpause .button {
-                display: inline-block;
-                width: 30px;
-                height: 32px;
-                background: #0e0d0d;
-                transition: inherit;
-                transition: 0.2s;
-                border-radius: 5px;
-                clip-path: polygon(0 0, 40% 0, 40% 100%, 60% 100%, 60% 0, 100% 0, 100% 100%, 0 100%);
-            }
-            
-            .playpause.playing .button {
-                clip-path: polygon(0 0, 50% 25%, 50% 75%, 50% 75%, 50% 25%, 100% 50%, 100% 50%, 0 100%);
-            }
-
-
-            /* Play Pause Button end*/
-
-            /*ViewMore Functionality */
-            .viewMore{
-                width: 180px;
-                height: 70px;
-                font-size: 20px;
-                transition-delay: 1s;
-                transition-duration: 1s;
-            }
-            .middleContainer{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                transition-delay: 1s;
-                transition-duration: 1s;
-            }
-
-            .secondBox{
-                display: none;
-                transition-delay: 1s;
-                transition-duration: 1s;
-            }
-            /**/
-
-            /* GO to top button*/
-            #goTopBtn{
-                  position: fixed; /* Fixed/sticky position */
-                bottom: 20px; /* Place the button at the bottom of the page */
-                right: 20px; /* Place the button 30px from the right */
-                z-index: 199; /* Make sure it does not overlap */
-                border: none; /* Remove borders */
-                outline: none; /* Remove outline */
-                background: linear-gradient(-45deg, rgb(236, 110, 241), rgb(166, 3, 150), rgb(114, 4, 158) ); /* Set a background color */
-                color: white; /* Text color */
-                cursor: pointer; /* Add a mouse pointer on hover */
-                padding: 15px; /* Some padding */
-                border-radius: 10px; /* Rounded corners */
-                font-size: 18px; /* Increase font size */
-                -o-transition: all .4s ease-in-out;
-                -webkit-transition: all .4s ease-in-out;
-                transition: all .4s ease-in-out;
-                opacity: 0;
-            }
-            #goTopBtn:hover{
-                background:linear-gradient(-45deg, rgb(166, 3, 150), rgb(114, 4, 158),rgb(236, 110, 241) ) ;
-            }
-            
-            /**/
-
-
-
-            
-
-
-         @media(max-width:760px){
-            #preloader{
-                height: 100%;
-                display: block;
-            }
-            #about{
-                display: none;
-            }
-            #navbar{
-                width:97%;
-            }
-            .footer{
-                width: 97%;
-            }
-            #navbar #atext{
-                font-size: 1rem;
-            }
-            #navbar a{
-                padding: 2px;
-            }
-
-            .intro1{
-                margin-left:5px;
-                padding-left: 10px !important;
-                width: 100%;
-            }
-            #intro_text{
-                font-size: 60px !important;
-            }
-      
-            .intro_para{
-                display: flex;
-                margin: 0px !important;
-                margin-top: 20px !important;
-                margin-bottom: 100px !important;
-                align-items: center;
-                justify-content: center;
-            }
-            .songLoader{
-                width: 20rem;
-            }
-            .bottom_song_meta{
-                width: 100%;
-            }
-             .icon{
-                width: 25px;
-            }
-            .songInfo img{
-                display: none;
-            }
-            .songInfo{
-                position: inherit;
-            }
-             .icon{
-                width: 25px;
-            }
-  
-        }
-
-    </style>
-
-<body>
+    <style></style>
+  </head>
+  <body>
     <div class="main-container">
-        <div id="navbar">
-            <a href="#default" id="logo" style="font-family: 'Lobster', cursive;">M-Focus</a>
-            <div id="navbar-right">
-                <!-- <a href="#home" id="atext">Way to Meditate</a> -->
-                <!-- <a href="#contact">Developer</a> -->
-                <a href="#about" id="about">Developer</a>
-            </div>
+      <div class="navbar fixedNav">
+        <a href="#" id="logo">M-Focus</a>
+        <div id="navbar-right">
+          <a
+            href="https://github.com/PrathameshPawar119"
+            target="_blank"
+            id="about"
+            ><i class="fa-solid fa-user"></i>Developer</a
+          >
         </div>
+      </div>
 
-        <hr><hr><hr><hr><hr><hr><hr><hr><hr><br><br><br>
-
-        <div class="container">
-            <div class="intro1">
-                <h1 style="margin: 0; font-size: 100px; color:rgb(83, 3, 3)" id="intro_text"><b>Sharpen Your Mind</b></h1>
-                <h2 style="display: block; margin-top: 0; "> &nbsp; By listening this Devotional low bit songs.</h2>
-            </div>
-            <div class="intro_para" style="background-repeat:no-repeat;"><p style="display: block; margin-left: 200px; margin-top: 40px; width: 70%; " class="intro_para"> Mind needs to be relax... 
-                Best Devotional and Spiritual songs for this young generation with added bass effects... 🙂.
-                </p>
-            </div>
+      <div class="container">
+        <div class="intro1">
+          <h1 class="introHead">Sharpen Your Mind</h1>
+          <h2 class="introBody">By listening this Devotional low bit songs.</h2>
         </div>
-
-        <div class="songs_container container firstBox">
-            <h2> 😌 Best Spiritual Songs and Tunes  ~</h2>
-            <div class="row">
-                <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more">
-                            <button id="1" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more ">
-                            <button id="2" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more">
-                            <button id="3" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more">
-                            <button id="4" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more ">
-                            <button id="5" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more">
-                            <button id="6" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="intro_para">
+          <p>
+            Mind needs to be relax... Best Devotional and Spiritual songs for
+            this young generation with added bass effects... 🙂.
+          </p>
         </div>
+      </div>
 
-
-        <div class="container middleContainer">
-            <button class="bn632-hover bn21 viewMore" id="viewMoreBtn" style="opacity: 1;">View More</button>
+      <div class="songs_container container firstBox">
+        <!-- <h2>😌 Best Spiritual Songs and Tunes ~</h2> -->
+        <div class="sectionCenter">
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="1" class="playThis bn632-hover bn21">Play</button>
+              </div>
+            </div>
+          </div>
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="2" class="playThis bn632-hover bn21">Play</button>
+              </div>
+            </div>
+          </div>
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="3" class="playThis bn632-hover bn21">Play</button>
+              </div>
+            </div>
+          </div>
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="4" class="playThis bn632-hover bn21">Play</button>
+              </div>
+            </div>
+          </div>
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="5" class="playThis bn632-hover bn21">Play</button>
+              </div>
+            </div>
+          </div>
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="6" class="playThis bn632-hover bn21">Play</button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
+      <div class="container middleContainer">
+        <button
+          class="bn632-hover bn21 viewMore"
+          id="viewMoreBtn"
+          style="opacity: 1"
+        >
+          View More
+        </button>
+      </div>
 
-        <div class="songs_container container secondBox">
-            <div class="row">
-                <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more">
-                            <button id="7" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more ">
-                            <button id="8" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more">
-                            <button id="9" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>
+      <div class="songs_container container secondBox">
+        <div class="sectionCenter">
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="7" class="playThis bn632-hover bn21">Play</button>
+              </div>
             </div>
-            <div class="row">
-                <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more">
-                            <button id="10" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more ">
-                            <button id="11" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="image songItem">
-                    <img src="" alt="govind-radhe">
-                    <div class="details">
-                        <h2 class="songTitle">Your Title</h2>
-                        <p class="songName">Govind Radhe Radhe Sham ~ Bass boosted Low Beat</p>
-                        <div class="more">
-                            <button id="12" class="playThis bn632-hover bn21">Play</button>
-                        </div>
-                    </div>
-                </div>  -->
+          </div>
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="8" class="playThis bn632-hover bn21">Play</button>
+              </div>
             </div>
+          </div>
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="9" class="playThis bn632-hover bn21">Play</button>
+              </div>
+            </div>
+          </div>
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="10" class="playThis bn632-hover bn21">Play</button>
+              </div>
+            </div>
+          </div>
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="11" class="playThis bn632-hover bn21">Play</button>
+              </div>
+            </div>
+          </div>
+          <div class="image songItem">
+            <img src="" alt="govind-radhe" />
+            <div class="details">
+              <h2 class="songTitle">Your Title</h2>
+              <p class="songName">
+                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
+              </p>
+              <div class="more">
+                <button id="11" class="playThis bn632-hover bn21">Play</button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
+      <div class="container middleContainer">
+        <button
+          class="bn632-hover bn21 viewLess"
+          id="viewLessBtn"
+          style="display: none"
+        >
+          View Less
+        </button>
+      </div>
 
-        <div class="container middleContainer">
-            <button class="bn632-hover bn21 viewLess" id="viewLessBtn" style="display: none;">View Less</button>
+      <button id="goTopBtn" title="Go to Top">&#8657;</button>
+
+      <div class="bottom_song_meta" style="z-index: 100;">
+        <input
+          type="range"
+          name="songLoader"
+          id="songLoader"
+          class="songLoader"
+          value="0"
+          min="0"
+          max="100"
+        />
+        <div
+          class="playIcons"
+          style="display: flex; justify-content: space-around"
+        >
+          <img
+            alt="Play"
+            class="icon preBtn"
+            id="previousBtn"
+            src="previous.png"
+          />
+          <div class="playpause">
+            <div class="button icon playBtn" id="masterPlay"></div>
+          </div>
+          <img alt="Play" class="icon postBtn" id="nextBtn" src="next.png" />
         </div>
-
-
-
-        <button id="goTopBtn" title="Go to Top">&#8657;</button>
-    
-    
-        <div class="bottom_song_meta" style="z-index: 100;">
-            <input type="range" name="songLoader" id="songLoader" class="songLoader" value="0" min="0" max="100">
-            <div class="playIcons" style="display: flex; justify-content: space-around;">
-                <img alt="Play" class="icon preBtn" id="previousBtn" src="previous.png">
-                <div class="playpause">
-                    <div class="button icon playBtn" id="masterPlay"></div>
-                </div>
-                <img  alt="Play" class="icon postBtn" id="nextBtn" src="next.png">
-            </div>
-            <div class="songInfo">
-                <img src="song_banner/Nt6v-unscreen.gif" id="songGIf" alt="Song Playing">
-                <span id="currentPlayingSong">Govind-radhe</span>
-            </div>
+        <div class="songInfo">
+          <img
+            src="song_banner/Nt6v-unscreen.gif"
+            id="songGIf"
+            alt="Song Playing"
+          />
+          <span id="currentPlayingSong">Govind-radhe</span>
         </div>
+      </div>
 
-        <footer style="z-index: 101;">
-            <div class="footer">
-                <a href="#default" id="logo" style="font-family: 'Lobster', cursive;">&#169; Pawar WebTech Ltd. </a>
-            </div>
-        </footer>
-
-        
+      <footer>
+          <p >
+            Copyright ©2023 All rights reserved | This template is made with<i
+              class="fa-solid fa-heart"
+              style="color: #f10909"
+            ></i>by pawar infotech LTD.
+          </p>
+      </footer>
     </div>
+  </body>
 
-</body>
+  <script src="index.js"></script>
+  <script type="text/javascript">
+    window.onscroll = function () {
+      scrollFunction();
+    };
+    let goTopBtn = document.getElementById("goTopBtn");
 
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
+      ) {
+        document.getElementById("navbar").style.padding =
+          "20px 50px 50px 50px ";
+        document.getElementById("logo").style.fontSize = "35px";
+        document.getElementById("navbar").style.background =
+          "rgb(219, 216, 216)";
+        document.getElementById("navbar").style.height = "75px";
+      } else {
+        document.getElementById("navbar").style.padding = "35px 20px 30px 30px";
+        document.getElementById("logo").style.fontSize = "45px";
+        document.getElementById("navbar").style.background = "white";
+        document.getElementById("navbar").style.height = "100px";
+      }
 
-<script src="index.js"></script>
-    <script type="text/javascript">
-        window.onscroll = function () { scrollFunction() };
-        let goTopBtn = document.getElementById('goTopBtn');
+      if (
+        document.body.scrollTop > 900 ||
+        document.documentElement.scrollTop > 900
+      ) {
+        goTopBtn.style.opacity = "1";
+      } else {
+        goTopBtn.style.opacity = "0";
+      }
+    }
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                document.getElementById("navbar").style.padding = "20px 50px 50px 50px ";
-                document.getElementById("logo").style.fontSize = "35px";
-                document.getElementById("navbar").style.background = "rgb(219, 216, 216)";
-                document.getElementById("navbar").style.height = "75px";
+    goTopBtn.addEventListener("click", () => {
+      window.scroll(100, 300);
+    });
 
-            }
-             else {
-                document.getElementById("navbar").style.padding = "35px 20px 30px 30px";
-                document.getElementById("logo").style.fontSize = "45px";
-                document.getElementById("navbar").style.background = "white";
-                document.getElementById("navbar").style.height = "100px";
-            }
+    const playpause = document.querySelector(".playpause");
 
-            if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
-                goTopBtn.style.opacity = '1';
-            }
-            else{
-                goTopBtn.style.opacity = '0';
-            }
-        }
+    playpause.addEventListener("click", () => {
+      playpause.classList.toggle("playing");
+    });
 
-        goTopBtn.addEventListener('click', ()=>{
-                window.scroll(100,300);
-        });
+    let viewMoreBtn = document.getElementById("viewMoreBtn");
+    let viewLessBtn = document.getElementById("viewLessBtn");
+    let secondBox = document.getElementsByClassName("secondBox");
 
-        const playpause = document.querySelector('.playpause');
+    viewMoreBtn.addEventListener("click", () => {
+      viewMoreBtn.style.display = "none";
+      secondBox[0].style.display = "block";
+      viewLessBtn.style.display = "block";
+      viewLessBtn.style.opacity = "1";
+    });
 
-            playpause.addEventListener('click', () => {
-                playpause.classList.toggle('playing');
-            });
-
-
-        
-        let viewMoreBtn = document.getElementById('viewMoreBtn');
-        let viewLessBtn = document.getElementById('viewLessBtn');
-        let secondBox = document.getElementsByClassName('secondBox');
-
-        viewMoreBtn.addEventListener('click', ()=> {
-            viewMoreBtn.style.display = 'none';
-            secondBox[0].style.display = 'block';
-            viewLessBtn.style.display = 'block';
-            viewLessBtn.style.opacity = '1';
-        })
-
-        viewLessBtn.addEventListener('click', ()=> {
-            viewLessBtn.style.display = 'none';
-            secondBox[0].style.display = 'none';
-            viewMoreBtn.style.display = 'block';
-        })
-           
-
-    </script>
-
-    <!-- FONT LINKS FROM GOOGLE -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu&display=swap" rel="stylesheet">
-
+    viewLessBtn.addEventListener("click", () => {
+      viewLessBtn.style.display = "none";
+      secondBox[0].style.display = "none";
+      viewMoreBtn.style.display = "block";
+    });
+  </script>
 </html>
