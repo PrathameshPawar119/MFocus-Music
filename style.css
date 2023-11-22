@@ -26,6 +26,7 @@ body {
   padding: 1rem 2em;
   background: rgb(252, 223, 197);
   z-index: 999;
+  width: 100%;
 }
 .fixedNav {
   background-color: rgba(0, 0, 0, 0.2);
