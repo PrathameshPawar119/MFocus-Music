@@ -1,77 +1,100 @@
-let songs = [
-  {
-    songTitle: "Radha-Jale",
-    songName: " Radha kaise na jale ~ lofi bits",
-    fileName: "songs/Radha_jale.mp3",
-    coverName: "song_banner/govind-radhe.jpg",
-  },
-  {
-    songTitle: "Radhe-sham",
-    songName: " Govind Radhe Radhe sham ~ lofi bits",
-    fileName: "songs/radhe_sham.mp3",
-    coverName: "song_banner/krishna1.jpg",
-  },
-  {
-    songTitle: "Radha Rani",
-    songName: "Radha Rani Lage ~ bass reaxed.",
-    fileName: "songs/radha_rani.mp3",
-    coverName: "song_banner/radha1.png",
-  },
-  {
-    songTitle: "Hanuman Chalisa",
-    songName: "Hanuman-Chalisa ~ bas boosted",
-    fileName: "songs/hanuman_chalisa.mp3",
-    coverName: "song_banner/hanumana1.jpg",
-  },
-  {
-    songTitle: "Ham Katha Sunate",
-    songName: "Ham katha sunate ram shakal gun dham ki ....",
-    fileName: "songs/ham_katha_sunate.mp3",
-    coverName: "song_banner/rama2.jpg",
-  },
-  {
-    songTitle: "Aarambh Hei Prachand",
-    songName: "Aarambh hei Prachand ~ Bass Boosted..",
-    fileName: "songs/aarambh_he_prachand.mp3",
-    coverName: "song_banner/rama3.jpg",
-  },
-  {
-    songTitle: "Hey Raam",
-    songName: "Hey Raam (Female Version) ",
-    fileName: "songs/Hey_Ram(female).mp3",
-    coverName: "song_banner/raam-siya1.jpg",
-  },
-  {
-    songTitle: "Hey Raam",
-    songName: "Hey Raam (Male Version) ",
-    fileName: "songs/Hey_Ram(male).mp3",
-    coverName: "song_banner/rama4.jpg",
-  },
-  {
-    songTitle: "Namo Namo",
-    songName: "Namo Namo ji shankara (Kedarnath)",
-    fileName: "songs/namo_namo.mp3",
-    coverName: "song_banner/shiva1.jpg",
-  },
-  {
-    songTitle: "Kahani Karn ki",
-    songName: "My Favourite",
-    fileName: "songs/Kahani_Karn_ki.mp3",
-    coverName: "song_banner/karna1.png",
-  },
-  {
-    songTitle: "Raam Siya Raam",
-    songName: "Mangal Bhavan... Amangal Haari..",
-    fileName: "songs/Ram_Siya_Ram.mp3",
-    coverName: "song_banner/rama1.jpg",
-  },
-  {
-    songTitle: "Raam Siya Raam",
-    songName: "Mangal Bhavan... Amangal Haari..",
-    fileName: "songs/Ram_Siya_Ram.mp3",
-    coverName: "song_banner/rama1.jpg",
-  },
-];
+// Dynamic Songs Structure by Folders
+const songsByFolder = {
+  LowFi: [
+    {
+      songTitle: "Radha-Jale",
+      songName: " Radha kaise na jale ~ lofi bits",
+      fileName: "songs/Radha_jale.mp3",
+      coverName: "song_banner/govind-radhe.jpg",
+      folder: "LowFi"
+    },
+    {
+      songTitle: "Radhe-sham",
+      songName: " Govind Radhe Radhe sham ~ lofi bits",
+      fileName: "songs/radhe_sham.mp3",
+      coverName: "song_banner/krishna1.jpg",
+      folder: "LowFi"
+    },
+    {
+      songTitle: "Radha Rani",
+      songName: "Radha Rani Lage ~ bass reaxed.",
+      fileName: "songs/radha_rani.mp3",
+      coverName: "song_banner/radha1.png",
+      folder: "LowFi"
+    },
+    {
+      songTitle: "Hanuman Chalisa",
+      songName: "Hanuman-Chalisa ~ bas boosted",
+      fileName: "songs/hanuman_chalisa.mp3",
+      coverName: "song_banner/hanumana1.jpg",
+      folder: "LowFi"
+    },
+    {
+      songTitle: "Ham Katha Sunate",
+      songName: "Ham katha sunate ram shakal gun dham ki ....",
+      fileName: "songs/ham_katha_sunate.mp3",
+      coverName: "song_banner/rama2.jpg",
+      folder: "LowFi"
+    },
+    {
+      songTitle: "Aarambh Hei Prachand",
+      songName: "Aarambh hei Prachand ~ Bass Boosted..",
+      fileName: "songs/aarambh_he_prachand.mp3",
+      coverName: "song_banner/rama3.jpg",
+      folder: "LowFi"
+    }
+  ],
+  motivations: [
+    {
+      songTitle: "Hey Raam",
+      songName: "Hey Raam (Female Version) ",
+      fileName: "songs/Hey_Ram(female).mp3",
+      coverName: "song_banner/raam-siya1.jpg",
+      folder: "motivations"
+    },
+    {
+      songTitle: "Hey Raam",
+      songName: "Hey Raam (Male Version) ",
+      fileName: "songs/Hey_Ram(male).mp3",
+      coverName: "song_banner/rama4.jpg",
+      folder: "motivations"
+    },
+    {
+      songTitle: "Namo Namo",
+      songName: "Namo Namo ji shankara (Kedarnath)",
+      fileName: "songs/namo_namo.mp3",
+      coverName: "song_banner/shiva1.jpg",
+      folder: "motivations"
+    },
+    {
+      songTitle: "Kahani Karn ki",
+      songName: "My Favourite",
+      fileName: "songs/Kahani_Karn_ki.mp3",
+      coverName: "song_banner/karna1.png",
+      folder: "motivations"
+    },
+    {
+      songTitle: "Raam Siya Raam",
+      songName: "Mangal Bhavan... Amangal Haari..",
+      fileName: "songs/Ram_Siya_Ram.mp3",
+      coverName: "song_banner/rama1.jpg",
+      folder: "motivations"
+    }
+  ]
+};
+
+// Flatten all songs into a single array with global index
+let allSongs = [];
+let globalSongIndex = 1;
+Object.keys(songsByFolder).forEach(folder => {
+  songsByFolder[folder].forEach(song => {
+    song.globalIndex = globalSongIndex++;
+    allSongs.push(song);
+  });
+});
+
+// For backward compatibility
+let songs = allSongs;
 
 // DOM Elements
 let masterPlay = document.getElementById("masterPlay");
@@ -88,6 +111,11 @@ let volumeBtn = document.getElementById("volumeBtn");
 let autoPlayToggle = document.getElementById("autoPlayToggle");
 let shuffleBtn = document.getElementById("shuffleBtn");
 let repeatBtn = document.getElementById("repeatBtn");
+let searchInput = document.getElementById("searchInput");
+let foldersContainer = document.getElementById("foldersContainer");
+let songsContainer = document.getElementById("songsContainer");
+let selectedFolders = []; // Array to support multiple folder selection
+let searchQuery = "";
 let songIndex = 1;
 let isPlaying = false;
 let isAutoPlay = true;
@@ -100,23 +128,168 @@ let dataArray = null;
 let animationFrameId = null;
 
 // Initialize audio
-var audioElement = new Audio("songs/radhe_sham.mp3");
+var audioElement = new Audio();
 audioElement.volume = 0.7;
+
+// Load folder selection from localStorage
+function loadFolderSelection() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEYS.SELECTED_FOLDER);
+    if (saved) {
+      const savedFolders = JSON.parse(saved);
+      if (Array.isArray(savedFolders)) {
+        selectedFolders = savedFolders;
+      }
+    }
+  } catch (e) {
+    console.log("Error loading folder selection:", e);
+  }
+}
+
+// Save folder selection to localStorage
+function saveFolderSelection() {
+  try {
+    localStorage.setItem(STORAGE_KEYS.SELECTED_FOLDER, JSON.stringify(selectedFolders));
+  } catch (e) {
+    console.log("Error saving folder selection:", e);
+  }
+}
+
+// Initialize folder buttons
+function initFolderButtons() {
+  if (!foldersContainer) return;
+  
+  foldersContainer.innerHTML = '';
+  
+  // Create "All" button
+  const allButton = document.createElement('button');
+  allButton.className = `folder-btn ${selectedFolders.length === 0 ? 'active' : ''}`;
+  allButton.textContent = 'All';
+  allButton.dataset.folder = 'all';
+  allButton.addEventListener('click', () => {
+    selectedFolders = [];
+    updateFolderButtons();
+    saveFolderSelection();
+    renderSongs();
+  });
+  foldersContainer.appendChild(allButton);
+  
+  // Create folder buttons
+  Object.keys(songsByFolder).forEach(folder => {
+    const button = document.createElement('button');
+    button.className = `folder-btn ${selectedFolders.includes(folder) ? 'active' : ''}`;
+    button.textContent = folder.charAt(0).toUpperCase() + folder.slice(1);
+    button.dataset.folder = folder;
+    button.addEventListener('click', () => {
+      toggleFolder(folder);
+    });
+    foldersContainer.appendChild(button);
+  });
+}
+
+function toggleFolder(folder) {
+  const index = selectedFolders.indexOf(folder);
+  if (index > -1) {
+    // Remove folder
+    selectedFolders.splice(index, 1);
+  } else {
+    // Add folder
+    selectedFolders.push(folder);
+  }
+  updateFolderButtons();
+  saveFolderSelection();
+  renderSongs();
+}
+
+function updateFolderButtons() {
+  const buttons = foldersContainer.querySelectorAll('.folder-btn');
+  buttons.forEach(button => {
+    const folder = button.dataset.folder;
+    if (folder === 'all') {
+      button.classList.toggle('active', selectedFolders.length === 0);
+    } else {
+      button.classList.toggle('active', selectedFolders.includes(folder));
+    }
+  });
+}
+
+// Initialize search
+function initSearch() {
+  if (!searchInput) return;
+  
+  const clearSearchBtn = document.getElementById('clearSearch');
+  
+  searchInput.addEventListener('input', (e) => {
+    searchQuery = e.target.value;
+    if (clearSearchBtn) {
+      clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
+    }
+    renderSongs();
+  });
+  
+  if (clearSearchBtn) {
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      clearSearchBtn.style.display = 'none';
+      renderSongs();
+    });
+  }
+}
 
 // Load preferences and initialize on page load
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM Content Loaded");
+  console.log("Total songs:", allSongs.length);
+  console.log("Songs by folder:", Object.keys(songsByFolder));
+  
   loadUserPreferences();
+  loadFolderSelection();
+  initFolderButtons();
+  initSearch();
+  renderSongs();
+  
+  // Add comprehensive error handling for audio element
+  audioElement.addEventListener('error', function(e) {
+    console.error("Audio element error:", e);
+    console.error("Current src:", audioElement.src);
+    const error = audioElement.error;
+    if (error) {
+      console.error("Error code:", error.code);
+      console.error("Error message:", error.message);
+      switch(error.code) {
+        case 1: console.error("MEDIA_ERR_ABORTED - The user aborted the loading"); break;
+        case 2: console.error("MEDIA_ERR_NETWORK - A network error occurred"); break;
+        case 3: console.error("MEDIA_ERR_DECODE - An error occurred while decoding"); break;
+        case 4: console.error("MEDIA_ERR_SRC_NOT_SUPPORTED - The source is not supported"); break;
+      }
+    }
+  });
+  
+  audioElement.addEventListener('canplay', () => {
+    console.log("Audio can play, src:", audioElement.src);
+  });
+  
+  audioElement.addEventListener('loadstart', () => {
+    console.log("Audio loading started, src:", audioElement.src);
+  });
   
   // Try to resume last played song
   setTimeout(() => {
     if (!resumeLastPlayed()) {
       // If no resume, load default song
-      if (currentPlayingSong) {
-        currentPlayingSong.innerText = songs[songIndex - 1].songTitle;
-      }
-      const playerCover = document.getElementById("playerCover");
-      if (playerCover) {
-        playerCover.src = songs[songIndex - 1].coverName;
+      if (allSongs.length > 0) {
+        songIndex = allSongs[0].globalIndex;
+        if (currentPlayingSong) {
+          currentPlayingSong.innerText = allSongs[0].songTitle;
+        }
+        const playerCover = document.getElementById("playerCover");
+        if (playerCover) {
+          playerCover.src = allSongs[0].coverName;
+        }
+        audioElement.src = allSongs[0].fileName;
+        audioElement.load();
+        console.log("Default song loaded:", allSongs[0].fileName);
       }
     }
   }, 200);
@@ -139,7 +312,7 @@ function initAudioContext() {
 
 // Initialize shuffled indices
 function initShuffledIndices() {
-  shuffledIndices = Array.from({ length: songs.length }, (_, i) => i + 1);
+  shuffledIndices = allSongs.map(s => s.globalIndex);
   for (let i = shuffledIndices.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [shuffledIndices[i], shuffledIndices[j]] = [shuffledIndices[j], shuffledIndices[i]];
@@ -153,7 +326,8 @@ const STORAGE_KEYS = {
   PLAYBACK_HISTORY: 'mfocus_history',
   LAST_PLAYED: 'mfocus_last_played',
   FAVORITES: 'mfocus_favorites',
-  PLAY_COUNTS: 'mfocus_play_counts'
+  PLAY_COUNTS: 'mfocus_play_counts',
+  SELECTED_FOLDER: 'mfocus_selected_folder'
 };
 
 // Load user preferences from localStorage
@@ -221,9 +395,12 @@ function saveUserPreferences() {
 function addToHistory(songIndex) {
   try {
     let history = JSON.parse(localStorage.getItem(STORAGE_KEYS.PLAYBACK_HISTORY) || '[]');
+    const song = allSongs.find(s => s.globalIndex === songIndex);
+    if (!song) return;
+    
     const songData = {
       index: songIndex,
-      title: songs[songIndex - 1].songTitle,
+      title: song.songTitle,
       timestamp: Date.now()
     };
     
@@ -289,7 +466,8 @@ function resumeLastPlayed() {
       const lastPlayed = JSON.parse(saved);
       // Only resume if it was played in last 24 hours
       const hoursSince = (Date.now() - lastPlayed.timestamp) / (1000 * 60 * 60);
-      if (hoursSince < 24 && lastPlayed.songIndex >= 1 && lastPlayed.songIndex <= songs.length) {
+      const song = allSongs.find(s => s.globalIndex === lastPlayed.songIndex);
+      if (hoursSince < 24 && song) {
         songIndex = lastPlayed.songIndex;
         const shouldResume = lastPlayed.currentTime > 5;
         loadSong(songIndex, shouldResume);
@@ -315,6 +493,57 @@ setInterval(() => {
   }
 }, 5000); // Save every 5 seconds
 
+// ==================== PARTICLE SYSTEM ====================
+function createParticles() {
+  const container = document.getElementById("particlesContainer");
+  if (!container) return;
+  
+  // Clear existing particles
+  container.innerHTML = '';
+  
+  // Create particles
+  for (let i = 0; i < 30; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    
+    const size = Math.random() * 4 + 2;
+    const startX = Math.random() * 100;
+    const delay = Math.random() * 5;
+    const duration = 10 + Math.random() * 10;
+    
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+    particle.style.left = startX + '%';
+    particle.style.animationDelay = delay + 's';
+    particle.style.animationDuration = duration + 's';
+    particle.style.opacity = Math.random() * 0.5 + 0.3;
+    
+    // Random colors
+    const colors = [
+      'rgba(102, 126, 234, 0.8)',
+      'rgba(118, 75, 162, 0.8)',
+      'rgba(240, 147, 251, 0.8)',
+      'rgba(79, 172, 254, 0.8)',
+      'rgba(0, 242, 254, 0.8)',
+      'rgba(255, 255, 255, 0.6)'
+    ];
+    particle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]} 0%, transparent 70%)`;
+    
+    container.appendChild(particle);
+  }
+}
+
+// Update particles based on music intensity
+function updateParticles(intensity) {
+  const particles = document.querySelectorAll('.particle');
+  particles.forEach((particle, index) => {
+    const scale = 1 + intensity * 0.5;
+    const opacity = 0.3 + intensity * 0.5;
+    particle.style.transform = `scale(${scale})`;
+    particle.style.opacity = opacity;
+  });
+}
+
 // Navbar scroll effect
 window.addEventListener("scroll", function () {
   let navHeight = nav.getBoundingClientRect().height;
@@ -326,13 +555,143 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Put data into cards
-for (let i = 0; i < songItems.length; i++) {
-  if (i < songs.length) {
-    const element = songItems[i];
-    element.getElementsByTagName("img")[0].src = songs[i].coverName;
-    element.getElementsByTagName("h2")[0].innerText = songs[i].songTitle;
-    element.getElementsByTagName("p")[0].innerText = songs[i].songName;
+// Render songs dynamically
+function renderSongs() {
+  if (!songsContainer) return;
+  
+  // Get filtered songs
+  let filteredSongs = allSongs;
+  
+  // Apply folder filter
+  if (selectedFolders.length > 0) {
+    filteredSongs = allSongs.filter(song => selectedFolders.includes(song.folder));
+  }
+  
+  // Apply search filter
+  if (searchQuery) {
+    const query = searchQuery.toLowerCase();
+    filteredSongs = filteredSongs.filter(song => 
+      song.songTitle.toLowerCase().includes(query) ||
+      song.songName.toLowerCase().includes(query)
+    );
+  }
+  
+  // Group songs by selected folders
+  let folderGroups = {};
+  let otherSongs = [];
+  
+  if (selectedFolders.length > 0) {
+    // Group by selected folders
+    selectedFolders.forEach(folder => {
+      const folderSongs = filteredSongs.filter(song => song.folder === folder);
+      if (folderSongs.length > 0) {
+        folderGroups[folder] = folderSongs;
+      }
+    });
+    
+    // Get other songs (not in selected folders) if search is active
+    if (searchQuery) {
+      otherSongs = allSongs.filter(song => 
+        !selectedFolders.includes(song.folder) &&
+        (song.songTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+         song.songName.toLowerCase().includes(searchQuery.toLowerCase()))
+      );
+    }
+  } else {
+    // No folder selected - show all songs
+    otherSongs = filteredSongs;
+  }
+  
+  // Clear container
+  songsContainer.innerHTML = '';
+  
+  // Render selected folder groups at top
+  selectedFolders.forEach(folder => {
+    if (folderGroups[folder] && folderGroups[folder].length > 0) {
+      const folderSection = createSongSection(folderGroups[folder], folder, true);
+      songsContainer.appendChild(folderSection);
+    }
+  });
+  
+  // Render other songs
+  if (otherSongs.length > 0) {
+    const otherSection = createSongSection(otherSongs, selectedFolders.length > 0 ? 'Other Songs' : 'All Songs', false);
+    songsContainer.appendChild(otherSection);
+  }
+  
+  // Re-attach event listeners
+  attachSongListeners();
+}
+
+function createSongSection(songs, title, isFeatured) {
+  const section = document.createElement('div');
+  section.className = `songs_container container ${isFeatured ? 'featured-section' : ''}`;
+  
+  if (isFeatured) {
+    const sectionTitle = document.createElement('h2');
+    sectionTitle.className = 'section-title';
+    sectionTitle.textContent = title;
+    section.appendChild(sectionTitle);
+  }
+  
+  const grid = document.createElement('div');
+  grid.className = 'sectionCenter';
+  
+  songs.forEach((song, index) => {
+    const card = document.createElement('div');
+    card.className = 'image songItem';
+    card.innerHTML = `
+      <img src="${song.coverName}" alt="${song.songTitle}" />
+      <div class="details">
+        <h2 class="songTitle">${song.songTitle}</h2>
+        <p class="songName">${song.songName}</p>
+        <div class="more">
+          <button class="playThis bn632-hover bn21" data-index="${song.globalIndex}">Play</button>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+  
+  section.appendChild(grid);
+  return section;
+}
+
+// Event delegation handler (defined once)
+function handlePlayButtonClick(e) {
+  const button = e.target.closest('.playThis');
+  if (button) {
+    e.preventDefault();
+    e.stopPropagation();
+    const globalIndex = parseInt(button.getAttribute('data-index'));
+    if (isNaN(globalIndex)) {
+      console.error('Invalid globalIndex:', button.getAttribute('data-index'));
+      return;
+    }
+    console.log('Play button clicked, globalIndex:', globalIndex);
+    const song = allSongs.find(s => s.globalIndex === globalIndex);
+    if (song) {
+      console.log('Song found:', song);
+      songIndex = globalIndex;
+      loadSong(songIndex);
+      playSong();
+    } else {
+      console.error('Song not found for index:', globalIndex);
+      console.log('Available songs:', allSongs.map(s => ({ index: s.globalIndex, title: s.songTitle })));
+    }
+  }
+}
+
+function attachSongListeners() {
+  // Remove old listener if exists
+  if (songsContainer && songsContainer._playHandler) {
+    songsContainer.removeEventListener('click', songsContainer._playHandler);
+  }
+  
+  // Use event delegation on the container (only add once)
+  if (songsContainer) {
+    songsContainer._playHandler = handlePlayButtonClick;
+    songsContainer.addEventListener('click', songsContainer._playHandler);
   }
 }
 
@@ -341,12 +700,15 @@ function updatePlayPauseState(playing) {
   isPlaying = playing;
   if (playing) {
     masterPlay.classList.add("playing");
+    document.body.classList.add("playing");
     if (songGif) {
       songGif.classList.add("playing");
       startRhythmVisualization();
     }
+    createParticles();
   } else {
     masterPlay.classList.remove("playing");
+    document.body.classList.remove("playing");
     if (songGif) {
       songGif.classList.remove("playing");
       stopRhythmVisualization();
@@ -376,6 +738,14 @@ function startRhythmVisualization() {
       const rotation = Date.now() * 0.1 * (1 + intensity);
       songGif.style.transform = `rotate(${rotation}deg) scale(${scale})`;
       songGif.style.filter = `brightness(${1 + intensity * 0.5})`;
+    }
+    
+    // Update particles with music intensity
+    updateParticles(intensity);
+    
+    // Update body animation speed based on intensity
+    if (intensity > 0.3) {
+      document.body.style.animationDuration = `${8 - intensity * 4}s`;
     }
     
     animationFrameId = requestAnimationFrame(animate);
@@ -415,19 +785,56 @@ function updateTimeDisplay() {
 
 // Load and play song
 function loadSong(index, preserveTime = false) {
-  if (index < 1 || index > songs.length) return;
+  const song = allSongs.find(s => s.globalIndex === index);
+  if (!song) {
+    console.error("Song not found for index:", index);
+    return;
+  }
+  
+  console.log("Loading song:", song);
   songIndex = index;
-  audioElement.src = songs[songIndex - 1].fileName;
-  currentPlayingSong.innerText = songs[songIndex - 1].songTitle;
+  
+  // Set audio source
+  audioElement.src = song.fileName;
+  
+  // Update UI
+  if (currentPlayingSong) {
+    currentPlayingSong.innerText = song.songTitle;
+  }
+  
   if (!preserveTime) {
     audioElement.currentTime = 0;
   }
+  
+  // Load the audio
   audioElement.load();
+  
+  // Handle loading errors with fallback
+  const errorHandler = function(e) {
+    console.error("Audio loading error for:", song.fileName);
+    const error = audioElement.error;
+    if (error) {
+      console.error("Error code:", error.code, "Message:", error.message);
+    }
+    
+    // Try fallback path (in case files are in root songs folder)
+    if (song.fileName.includes('/')) {
+      const fallbackPath = song.fileName.replace(/songs\/[^\/]+\//, 'songs/');
+      if (fallbackPath !== song.fileName) {
+        console.log("Trying fallback path:", fallbackPath);
+        audioElement.removeEventListener('error', errorHandler);
+        audioElement.src = fallbackPath;
+        audioElement.load();
+      }
+    }
+  };
+  
+  audioElement.addEventListener('error', errorHandler, { once: true });
   
   // Update cover image in player if element exists
   const playerCover = document.getElementById("playerCover");
   if (playerCover) {
-    playerCover.src = songs[songIndex - 1].coverName;
+    playerCover.src = song.coverName;
   }
   
   // Add to history
@@ -436,14 +843,30 @@ function loadSong(index, preserveTime = false) {
 
 // Play song
 function playSong() {
-  audioElement.play().then(() => {
-    updatePlayPauseState(true);
-    if (!audioContext) {
-      initAudioContext();
-    }
-  }).catch((error) => {
-    console.log("Play failed:", error);
-  });
+  if (!audioElement.src) {
+    console.error("No audio source set");
+    return;
+  }
+  
+  const playPromise = audioElement.play();
+  if (playPromise !== undefined) {
+    playPromise.then(() => {
+      updatePlayPauseState(true);
+      if (!audioContext) {
+        initAudioContext();
+      }
+    }).catch((error) => {
+      console.error("Play failed:", error);
+      // Try to handle autoplay restrictions
+      if (error.name === 'NotAllowedError') {
+        console.log("Autoplay blocked. User interaction required.");
+      } else if (error.name === 'NotSupportedError') {
+        console.error("Audio format not supported");
+      } else {
+        console.error("Audio playback error:", error);
+      }
+    });
+  }
 }
 
 // Pause song
@@ -461,16 +884,7 @@ masterPlay.addEventListener("click", () => {
   }
 });
 
-// Individual song play buttons
-Array.from(playThis).forEach((element) => {
-  element.addEventListener("click", (e) => {
-    const clickedIndex = parseInt(e.target.id);
-    if (clickedIndex >= 1 && clickedIndex <= songs.length) {
-      loadSong(clickedIndex);
-      playSong();
-    }
-  });
-});
+// Individual song play buttons (handled in attachSongListeners)
 
 // Next button
 let next = document.getElementById("nextBtn");
@@ -480,7 +894,10 @@ next.addEventListener("click", () => {
     const nextShuffleIndex = (currentShuffleIndex + 1) % shuffledIndices.length;
     songIndex = shuffledIndices[nextShuffleIndex];
   } else {
-    songIndex = (songIndex % songs.length) + 1;
+    const currentSong = allSongs.find(s => s.globalIndex === songIndex);
+    const currentIndex = allSongs.indexOf(currentSong);
+    const nextIndex = (currentIndex + 1) % allSongs.length;
+    songIndex = allSongs[nextIndex].globalIndex;
   }
   loadSong(songIndex);
   if (isAutoPlay) playSong();
@@ -494,7 +911,10 @@ previous.addEventListener("click", () => {
     const prevShuffleIndex = currentShuffleIndex <= 0 ? shuffledIndices.length - 1 : currentShuffleIndex - 1;
     songIndex = shuffledIndices[prevShuffleIndex];
   } else {
-    songIndex = songIndex <= 1 ? songs.length : songIndex - 1;
+    const currentSong = allSongs.find(s => s.globalIndex === songIndex);
+    const currentIndex = allSongs.indexOf(currentSong);
+    const prevIndex = currentIndex <= 0 ? allSongs.length - 1 : currentIndex - 1;
+    songIndex = allSongs[prevIndex].globalIndex;
   }
   loadSong(songIndex);
   if (isAutoPlay) playSong();
@@ -546,15 +966,19 @@ audioElement.addEventListener("ended", () => {
         songIndex = shuffledIndices[nextShuffleIndex];
       }
     } else {
+      const currentSong = allSongs.find(s => s.globalIndex === songIndex);
+      const currentIndex = allSongs.indexOf(currentSong);
+      
       if (repeatMode === 1) {
         // Repeat all - loop back to start if at end
-        songIndex = (songIndex % songs.length) + 1;
+        const nextIndex = (currentIndex + 1) % allSongs.length;
+        songIndex = allSongs[nextIndex].globalIndex;
       } else {
         // Normal play - stop at end if auto-play is off
-        if (songIndex >= songs.length) {
+        if (currentIndex >= allSongs.length - 1) {
           return; // Stop playback
         }
-        songIndex = (songIndex % songs.length) + 1;
+        songIndex = allSongs[currentIndex + 1].globalIndex;
       }
     }
     loadSong(songIndex);

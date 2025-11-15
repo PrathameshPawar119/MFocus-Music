@@ -33,6 +33,20 @@
     <style></style>
   </head>
   <body>
+    <!-- Animated Background Particles -->
+    <div class="particles-container" id="particlesContainer"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+    <div class="wave-animation">
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
+    </div>
     <div class="main-container">
       <div id="navbar" class="navbar fixedNav">
         <a href="#" id="logo">M-Focus</a>
@@ -50,186 +64,29 @@
         </div>
       </div>
 
-      <div class="container">
-        <div class="intro1">
-          <h1 class="introHead">Sharpen Your Mind</h1>
+
+      <!-- Search and Filter Controls -->
+      <div class="controls-container">
+        <div class="search-wrapper">
+          <i class="fas fa-search search-icon"></i>
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search songs..."
+            autocomplete="off"
+          />
+          <button class="clear-search" id="clearSearch" style="display: none;">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="folders-container" id="foldersContainer">
+          <!-- Folder buttons will be dynamically generated -->
         </div>
       </div>
 
-      <div class="songs_container container firstBox">
-        <!-- <h2>😌 Best Spiritual Songs and Tunes ~</h2> -->
-        <div class="sectionCenter">
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="1" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="2" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="3" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="4" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="5" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="6" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container middleContainer">
-        <button
-          class="bn632-hover bn21 viewMore"
-          id="viewMoreBtn"
-          style="opacity: 1"
-        >
-          View More
-        </button>
-      </div>
-
-      <div class="songs_container container secondBox">
-        <div class="sectionCenter">
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="7" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="8" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="9" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="10" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="11" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-          <div class="image songItem">
-            <img src="" alt="govind-radhe" />
-            <div class="details">
-              <h2 class="songTitle">Your Title</h2>
-              <p class="songName">
-                Govind Radhe Radhe Sham ~ Bass boosted Low Beat
-              </p>
-              <div class="more">
-                <button id="12" class="playThis bn632-hover bn21">Play</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container middleContainer">
-        <button
-          class="bn632-hover bn21 viewLess"
-          id="viewLessBtn"
-          style="display: none"
-        >
-          View Less
-        </button>
-      </div>
+      <!-- Dynamic Songs Container -->
+      <div id="songsContainer" class="songs-main-container"></div>
 
       <button id="goTopBtn" title="Go to Top">&#8657;</button>
 
@@ -302,10 +159,10 @@
 
       <footer>
           <p >
-            Copyright ©2023 All rights reserved | This template is made with<i
+            Copyright ©2022 All rights reserved | This is made with<i
               class="fa-solid fa-heart"
               style="color: #f10909"
-            ></i>by pawar infotech LTD.
+            ></i>by prathameshpawar.in.
           </p>
       </footer>
     </div>
@@ -346,21 +203,5 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    let viewMoreBtn = document.getElementById("viewMoreBtn");
-    let viewLessBtn = document.getElementById("viewLessBtn");
-    let secondBox = document.getElementsByClassName("secondBox");
-
-    viewMoreBtn.addEventListener("click", () => {
-      viewMoreBtn.style.display = "none";
-      secondBox[0].style.display = "block";
-      viewLessBtn.style.display = "block";
-      viewLessBtn.style.opacity = "1";
-    });
-
-    viewLessBtn.addEventListener("click", () => {
-      viewLessBtn.style.display = "none";
-      secondBox[0].style.display = "none";
-      viewMoreBtn.style.display = "block";
-    });
   </script>
 </html>
