@@ -37,25 +37,22 @@
       <div id="navbar" class="navbar fixedNav">
         <a href="#" id="logo">M-Focus</a>
         <div id="navbar-right">
-          <a
-            href="https://github.com/PrathameshPawar119"
-            target="_blank"
-            id="about"
-            ><i class="fa-solid fa-user"></i>Developer</a
-          >
+          <button id="autoPlayToggle" class="nav-feature-btn" title="Auto Play Next">
+            <i class="fas fa-forward"></i>
+            <span class="nav-btn-label">Auto</span>
+          </button>
+          <button id="shuffleBtn" class="nav-feature-btn" title="Shuffle">
+            <i class="fas fa-random"></i>
+          </button>
+          <button id="repeatBtn" class="nav-feature-btn" title="Repeat">
+            <i class="fas fa-redo"></i>
+          </button>
         </div>
       </div>
 
       <div class="container">
         <div class="intro1">
           <h1 class="introHead">Sharpen Your Mind</h1>
-          <h2 class="introBody">By listening this Devotional low bit songs.</h2>
-        </div>
-        <div class="intro_para">
-          <p>
-            Mind needs to be relax... Best Devotional and Spiritual songs for
-            this young generation with added bass effects... 🙂.
-          </p>
         </div>
       </div>
 
@@ -217,7 +214,7 @@
                 Govind Radhe Radhe Sham ~ Bass boosted Low Beat
               </p>
               <div class="more">
-                <button id="11" class="playThis bn632-hover bn21">Play</button>
+                <button id="12" class="playThis bn632-hover bn21">Play</button>
               </div>
             </div>
           </div>
@@ -237,37 +234,69 @@
       <button id="goTopBtn" title="Go to Top">&#8657;</button>
 
       <div class="bottom_song_meta" style="z-index: 100;">
-        <input
-          type="range"
-          name="songLoader"
-          id="songLoader"
-          class="songLoader"
-          value="0"
-          min="0"
-          max="100"
-        />
-        <div
-          class="playIcons"
-          style="display: flex; justify-content: space-around"
-        >
-          <img
-            alt="Play"
-            class="icon preBtn"
-            id="previousBtn"
-            src="previous.png"
-          />
-          <div class="playpause">
-            <div class="button icon playBtn" id="masterPlay"></div>
+        <div class="player-content">
+          <div class="player-left">
+            <img
+              src="song_banner/krishna1.jpg"
+              id="playerCover"
+              alt="Album Cover"
+              class="player-cover"
+            />
+            <div class="song-info-text">
+              <span id="currentPlayingSong" class="song-title">Select a song</span>
+              <div class="time-display">
+                <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+              </div>
+            </div>
           </div>
-          <img alt="Play" class="icon postBtn" id="nextBtn" src="next.png" />
-        </div>
-        <div class="songInfo">
-          <img
-            src="song_banner/Nt6v-unscreen.gif"
-            id="songGIf"
-            alt="Song Playing"
-          />
-          <span id="currentPlayingSong">Govind-radhe</span>
+          <div class="player-center">
+            <div class="playIcons">
+              <button class="control-btn" id="previousBtn" aria-label="Previous">
+                <i class="fas fa-step-backward"></i>
+              </button>
+              <button class="play-pause-btn" id="masterPlay" aria-label="Play/Pause">
+                <i class="fas fa-play play-icon"></i>
+                <i class="fas fa-pause pause-icon"></i>
+              </button>
+              <button class="control-btn" id="nextBtn" aria-label="Next">
+                <i class="fas fa-step-forward"></i>
+              </button>
+            </div>
+            <div class="progress-container">
+              <input
+                type="range"
+                name="songLoader"
+                id="songLoader"
+                class="songLoader"
+                value="0"
+                min="0"
+                max="100"
+              />
+            </div>
+          </div>
+          <div class="player-right">
+            <div class="volume-control">
+              <button class="volume-btn" id="volumeBtn" aria-label="Volume">
+                <i class="fas fa-volume-up"></i>
+              </button>
+              <input
+                type="range"
+                id="volumeSlider"
+                class="volume-slider"
+                min="0"
+                max="100"
+                value="70"
+              />
+            </div>
+            <div class="rhythm-visualizer">
+              <img
+                src="song_banner/Nt6v-unscreen.gif"
+                id="songGif"
+                alt="Song Playing"
+                class="song-gif"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -294,17 +323,11 @@
         document.body.scrollTop > 80 ||
         document.documentElement.scrollTop > 80
       ) {
-        document.getElementById("navbar").style.padding =
-          "30px";
-        document.getElementById("logo").style.fontSize = "35px";
-        document.getElementById("navbar").style.background =
-          "transparent";
-        document.getElementById("navbar").style.height = "60px";
+        document.getElementById("navbar").style.padding = "1rem 3rem";
+        document.getElementById("logo").style.fontSize = "2rem";
       } else {
-        document.getElementById("navbar").style.padding = "35px 20px 30px 30px";
-        document.getElementById("logo").style.fontSize = "45px";
-        document.getElementById("navbar").style.background = "white";
-        document.getElementById("navbar").style.height = "80px";
+        document.getElementById("navbar").style.padding = "1.5rem 3rem";
+        document.getElementById("logo").style.fontSize = "2.5rem";
       }
 
       if (
@@ -312,19 +335,15 @@
         document.documentElement.scrollTop > 900
       ) {
         goTopBtn.style.opacity = "1";
+        goTopBtn.classList.add("show");
       } else {
         goTopBtn.style.opacity = "0";
+        goTopBtn.classList.remove("show");
       }
     }
 
     goTopBtn.addEventListener("click", () => {
-      window.scroll(100, 300);
-    });
-
-    const playpause = document.querySelector(".playpause");
-
-    playpause.addEventListener("click", () => {
-      playpause.classList.toggle("playing");
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
     let viewMoreBtn = document.getElementById("viewMoreBtn");
