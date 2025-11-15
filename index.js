@@ -1,6 +1,6 @@
 // Dynamic Songs Structure by Folders
 const songsByFolder = {
-  LowFi: [
+  'LowFi': [
     {
       songTitle: "Radha-Jale",
       songName: " Radha kaise na jale ~ lofi bits",
@@ -22,13 +22,7 @@ const songsByFolder = {
       coverName: "song_banner/radha1.png",
       folder: "LowFi"
     },
-    {
-      songTitle: "Hanuman Chalisa",
-      songName: "Hanuman-Chalisa ~ bas boosted",
-      fileName: "songs/hanuman_chalisa.mp3",
-      coverName: "song_banner/hanumana1.jpg",
-      folder: "LowFi"
-    },
+   
     {
       songTitle: "Ham Katha Sunate",
       songName: "Ham katha sunate ram shakal gun dham ki ....",
@@ -37,15 +31,12 @@ const songsByFolder = {
       folder: "LowFi"
     },
     {
-      songTitle: "Aarambh Hei Prachand",
-      songName: "Aarambh hei Prachand ~ Bass Boosted..",
-      fileName: "songs/aarambh_he_prachand.mp3",
-      coverName: "song_banner/rama3.jpg",
-      folder: "LowFi"
-    }
-  ],
-  motivations: [
-    {
+      songTitle: "Raam Siya Raam",
+      songName: "Mangal Bhavan... Amangal Haari..",
+      fileName: "songs/Ram_Siya_Ram.mp3",
+      coverName: "song_banner/rama1.jpg",
+      folder: "motivations"
+    },{
       songTitle: "Hey Raam",
       songName: "Hey Raam (Female Version) ",
       fileName: "songs/Hey_Ram(female).mp3",
@@ -58,7 +49,10 @@ const songsByFolder = {
       fileName: "songs/Hey_Ram(male).mp3",
       coverName: "song_banner/rama4.jpg",
       folder: "motivations"
-    },
+    }
+  ],
+  'motivations': [
+    
     {
       songTitle: "Namo Namo",
       songName: "Namo Namo ji shankara (Kedarnath)",
@@ -74,11 +68,49 @@ const songsByFolder = {
       folder: "motivations"
     },
     {
-      songTitle: "Raam Siya Raam",
-      songName: "Mangal Bhavan... Amangal Haari..",
-      fileName: "songs/Ram_Siya_Ram.mp3",
-      coverName: "song_banner/rama1.jpg",
-      folder: "motivations"
+      songTitle: "Aarambh Hei Prachand",
+      songName: "Aarambh hei Prachand ~ Bass Boosted..",
+      fileName: "songs/aarambh_he_prachand.mp3",
+      coverName: "song_banner/rama3.jpg",
+      folder: "LowFi"
+    }, {
+      songTitle: "Hanuman Chalisa",
+      songName: "Hanuman-Chalisa ~ bas boosted",
+      fileName: "songs/hanuman_chalisa.mp3",
+      coverName: "song_banner/hanumana1.jpg",
+      folder: "LowFi"
+    }
+  ],
+  'Marathi Love': [
+    {
+      songTitle: "Saazni",
+      songName: "Saazni ~ Marathi Love Song",
+      fileName: "/songs/Saazni (Official Video) (1).mp3",
+      coverName: "/song_banner/saaznisong.jpg",
+      folder: "Marathi Love"
+    },
+    {
+      songTitle: "Saaz yo tuza..",
+      songName: "Saaz yo tuza. marathi love song",
+      fileName: "/songs/Saaj-Hyo-Tuza.mp3",
+      coverName: "/song_banner/saaz hyu tuza.jpg",
+      folder: "Marathi Love"
+    },
+    {
+      songTitle: "Man Dhavataya",
+      songName: "Man Dhavtaya Tuzyach mage... (My Favourite)",
+      fileName: "/songs/Mann_Dhaavataya.mp3",
+      coverName: "/song_banner/man dhavtaya.jpg",
+      folder: "Marathi Love"
+    }
+  ],
+  'Old Love': [
+    {
+      songTitle: "Haseen Wadia",
+      songName: "Yeh Haseen Vadiyan Yeh Khula Aasman Roja...",
+      fileName: "/songs/Yeh Haseen Vadiyan Yeh Khula Aasman Roja 128 Kbps.mp3",
+      coverName: "/song_banner/haseen wadia.jpg",
+      folder: "Old Love"
     }
   ]
 };
