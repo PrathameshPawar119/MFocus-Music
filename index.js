@@ -31,12 +31,29 @@ const songsByFolder = {
       folder: "LowFi"
     },
     {
+      songTitle: "Aarambh Hei Prachand",
+      songName: "Aarambh hei Prachand ~ Bass Boosted..",
+      fileName: "songs/aarambh_he_prachand.mp3",
+      coverName: "song_banner/rama3.jpg",
+      folder: "LowFi"
+    },
+    {
+      songTitle: "Hanuman Chalisa",
+      songName: "Hanuman-Chalisa ~ bas boosted",
+      fileName: "songs/hanuman_chalisa.mp3",
+      coverName: "song_banner/hanumana1.jpg",
+      folder: "LowFi"
+    }
+  ],
+  'motivations': [
+    {
       songTitle: "Raam Siya Raam",
       songName: "Mangal Bhavan... Amangal Haari..",
       fileName: "songs/Ram_Siya_Ram.mp3",
       coverName: "song_banner/rama1.jpg",
       folder: "motivations"
-    },{
+    },
+    {
       songTitle: "Hey Raam",
       songName: "Hey Raam (Female Version) ",
       fileName: "songs/Hey_Ram(female).mp3",
@@ -49,10 +66,7 @@ const songsByFolder = {
       fileName: "songs/Hey_Ram(male).mp3",
       coverName: "song_banner/rama4.jpg",
       folder: "motivations"
-    }
-  ],
-  'motivations': [
-    
+    },
     {
       songTitle: "Namo Namo",
       songName: "Namo Namo ji shankara (Kedarnath)",
@@ -66,41 +80,28 @@ const songsByFolder = {
       fileName: "songs/Kahani_Karn_ki.mp3",
       coverName: "song_banner/karna1.png",
       folder: "motivations"
-    },
-    {
-      songTitle: "Aarambh Hei Prachand",
-      songName: "Aarambh hei Prachand ~ Bass Boosted..",
-      fileName: "songs/aarambh_he_prachand.mp3",
-      coverName: "song_banner/rama3.jpg",
-      folder: "LowFi"
-    }, {
-      songTitle: "Hanuman Chalisa",
-      songName: "Hanuman-Chalisa ~ bas boosted",
-      fileName: "songs/hanuman_chalisa.mp3",
-      coverName: "song_banner/hanumana1.jpg",
-      folder: "LowFi"
     }
   ],
   'Marathi Love': [
     {
       songTitle: "Saazni",
       songName: "Saazni ~ Marathi Love Song",
-      fileName: "/songs/Saazni (Official Video) (1).mp3",
-      coverName: "/song_banner/saaznisong.jpg",
+      fileName: "songs/Saazni (Official Video) (1).mp3",
+      coverName: "song_banner/saaznisong.jpg",
       folder: "Marathi Love"
     },
     {
       songTitle: "Saaz yo tuza..",
       songName: "Saaz yo tuza. marathi love song",
-      fileName: "/songs/Saaj-Hyo-Tuza.mp3",
-      coverName: "/song_banner/saaz hyu tuza.jpg",
+      fileName: "songs/Saaj-Hyo-Tuza.mp3",
+      coverName: "song_banner/saaz hyu tuza.jpg",
       folder: "Marathi Love"
     },
     {
       songTitle: "Man Dhavataya",
       songName: "Man Dhavtaya Tuzyach mage... (My Favourite)",
-      fileName: "/songs/Mann_Dhaavataya.mp3",
-      coverName: "/song_banner/man dhavtaya.jpg",
+      fileName: "songs/Mann_Dhaavataya.mp3",
+      coverName: "song_banner/man dhavtaya.jpg",
       folder: "Marathi Love"
     }
   ],
@@ -108,8 +109,8 @@ const songsByFolder = {
     {
       songTitle: "Haseen Wadia",
       songName: "Yeh Haseen Vadiyan Yeh Khula Aasman Roja...",
-      fileName: "/songs/Yeh Haseen Vadiyan Yeh Khula Aasman Roja 128 Kbps.mp3",
-      coverName: "/song_banner/haseen wadia.jpg",
+      fileName: "songs/Yeh Haseen Vadiyan Yeh Khula Aasman Roja 128 Kbps.mp3",
+      coverName: "song_banner/haseen wadia.jpg",
       folder: "Old Love"
     }
   ]
@@ -589,66 +590,70 @@ window.addEventListener("scroll", function () {
 
 // Render songs dynamically
 function renderSongs() {
-  if (!songsContainer) return;
+  if (!songsContainer) {
+    console.error("Songs container not found");
+    return;
+  }
   
-  // Get filtered songs
-  let filteredSongs = allSongs;
+  console.log("Rendering songs. Selected folders:", selectedFolders, "Search query:", searchQuery);
   
-  // Apply folder filter
+  // Start with all songs
+  let songsToShow = allSongs;
+  
+  // Apply folder filter first
   if (selectedFolders.length > 0) {
-    filteredSongs = allSongs.filter(song => selectedFolders.includes(song.folder));
+    songsToShow = allSongs.filter(song => selectedFolders.includes(song.folder));
+    console.log("After folder filter:", songsToShow.length, "songs");
   }
   
   // Apply search filter
-  if (searchQuery) {
-    const query = searchQuery.toLowerCase();
-    filteredSongs = filteredSongs.filter(song => 
+  if (searchQuery && searchQuery.trim()) {
+    const query = searchQuery.toLowerCase().trim();
+    songsToShow = songsToShow.filter(song => 
       song.songTitle.toLowerCase().includes(query) ||
       song.songName.toLowerCase().includes(query)
     );
-  }
-  
-  // Group songs by selected folders
-  let folderGroups = {};
-  let otherSongs = [];
-  
-  if (selectedFolders.length > 0) {
-    // Group by selected folders
-    selectedFolders.forEach(folder => {
-      const folderSongs = filteredSongs.filter(song => song.folder === folder);
-      if (folderSongs.length > 0) {
-        folderGroups[folder] = folderSongs;
-      }
-    });
-    
-    // Get other songs (not in selected folders) if search is active
-    if (searchQuery) {
-      otherSongs = allSongs.filter(song => 
-        !selectedFolders.includes(song.folder) &&
-        (song.songTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
-         song.songName.toLowerCase().includes(searchQuery.toLowerCase()))
-      );
-    }
-  } else {
-    // No folder selected - show all songs
-    otherSongs = filteredSongs;
+    console.log("After search filter:", songsToShow.length, "songs");
   }
   
   // Clear container
   songsContainer.innerHTML = '';
   
-  // Render selected folder groups at top
-  selectedFolders.forEach(folder => {
-    if (folderGroups[folder] && folderGroups[folder].length > 0) {
-      const folderSection = createSongSection(folderGroups[folder], folder, true);
-      songsContainer.appendChild(folderSection);
+  // If folders are selected, group by folder
+  if (selectedFolders.length > 0) {
+    // Group songs by selected folders (in order of selection)
+    selectedFolders.forEach(folder => {
+      const folderSongs = songsToShow.filter(song => song.folder === folder);
+      if (folderSongs.length > 0) {
+        console.log(`Rendering folder "${folder}" with ${folderSongs.length} songs`);
+        const folderSection = createSongSection(folderSongs, folder, true);
+        songsContainer.appendChild(folderSection);
+      }
+    });
+    
+    // Show other songs only if search is active (to show results from other folders)
+    if (searchQuery && searchQuery.trim()) {
+      const otherSongs = allSongs.filter(song => 
+        !selectedFolders.includes(song.folder) &&
+        (song.songTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+         song.songName.toLowerCase().includes(searchQuery.toLowerCase()))
+      );
+      if (otherSongs.length > 0) {
+        console.log(`Rendering "Other Songs" with ${otherSongs.length} songs`);
+        const otherSection = createSongSection(otherSongs, 'Other Songs', false);
+        songsContainer.appendChild(otherSection);
+      }
     }
-  });
-  
-  // Render other songs
-  if (otherSongs.length > 0) {
-    const otherSection = createSongSection(otherSongs, selectedFolders.length > 0 ? 'Other Songs' : 'All Songs', false);
-    songsContainer.appendChild(otherSection);
+  } else {
+    // No folder selected - show all songs in one section
+    if (songsToShow.length > 0) {
+      console.log(`Rendering "All Songs" with ${songsToShow.length} songs`);
+      const allSection = createSongSection(songsToShow, 'All Songs', false);
+      songsContainer.appendChild(allSection);
+    } else {
+      console.log("No songs to display");
+      songsContainer.innerHTML = '<div class="no-songs-message"><p>No songs found matching your criteria.</p></div>';
+    }
   }
   
   // Re-attach event listeners

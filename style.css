@@ -673,6 +673,13 @@ body.playing .introHead {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+.no-songs-message {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+}
+
 /* Container */
 .container {
   height: fit-content;
