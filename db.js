@@ -145,3 +145,5 @@ const songsByFolder = {
       }
     ]
   };
+
+export default songsByFolder;
