@@ -419,13 +419,13 @@ function createParticles() {
   container.innerHTML = '';
   
   // Create particles
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 120; i++) {
     const particle = document.createElement('div');
     particle.className = 'particle';
     
-    const size = Math.random() * 4 + 2;
+    const size = Math.random() * 6 + 2;
     const startX = Math.random() * 100;
-    const delay = Math.random() * 5;
+    const delay = Math.random() * 4;
     const duration = 10 + Math.random() * 10;
     
     particle.style.width = size + 'px';
@@ -433,7 +433,7 @@ function createParticles() {
     particle.style.left = startX + '%';
     particle.style.animationDelay = delay + 's';
     particle.style.animationDuration = duration + 's';
-    particle.style.opacity = Math.random() * 0.5 + 0.3;
+    particle.style.opacity = Math.random() * 0.7 + 0.3;
     
     // Random colors
     const colors = [
@@ -454,8 +454,8 @@ function createParticles() {
 function updateParticles(intensity) {
   const particles = document.querySelectorAll('.particle');
   particles.forEach((particle, index) => {
-    const scale = 1 + intensity * 0.5;
-    const opacity = 0.3 + intensity * 0.5;
+    const scale = 1 + intensity * 0.9;
+    const opacity = 0.3 + intensity * 0.8;
     particle.style.transform = `scale(${scale})`;
     particle.style.opacity = opacity;
   });
